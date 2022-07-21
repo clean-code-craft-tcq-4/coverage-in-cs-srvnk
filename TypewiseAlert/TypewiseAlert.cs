@@ -16,12 +16,13 @@ namespace TypewiseAlert
             {
                 BreachType breachType = ClassifyBreach.classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
 
-                switch (alertTarget)
+                if(alertTarget == AlertTarget.TO_CONTROLLER)
                 {
-                    case AlertTarget.TO_CONTROLLER:
-                        return SendController.sendToController(breachType);
-                    case AlertTarget.TO_EMAIL:
-                        return SendEmail.sendToEmail(breachType);
+                    return SendController.sendToController(breachType);
+                }
+                else if(alertTarget == AlertTarget.TO_EMAIL)
+                {
+                    return SendController.sendToEmail(breachType);
                 }
             }
             catch(Exception)
