@@ -1,10 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TypewiseAlert.Manager;
-using TypewiseAlert.Models;
 using static TypewiseAlert.Enums;
 
 namespace TypewiseAlert
