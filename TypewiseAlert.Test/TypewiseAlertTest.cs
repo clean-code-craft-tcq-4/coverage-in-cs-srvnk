@@ -11,6 +11,7 @@ namespace TypewiseAlert.Test
         {
             TypewiseAlert.BatteryCharacter batteryCharacter;
             batteryCharacter.coolingType = CoolingType.PASSIVE_COOLING;
+            batteryCharacter.brand = "BatteryBrand";
 
             Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, 0));
             Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, 25));
