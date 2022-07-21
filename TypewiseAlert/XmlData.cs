@@ -17,19 +17,17 @@ namespace TypewiseAlert
                 xmlDocument.Load(string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory, "CoolingTypeFile.xml"));
 
                 XmlNodeList nodeList = xmlDocument.DocumentElement.SelectNodes("/CoolingTypeList/CoolingType");
-
-                if (nodeList != null && nodeList.Count > 0)
+                
+                foreach (XmlNode xmlNode in nodeList)
                 {
-                    foreach (XmlNode xmlNode in nodeList)
-                    {
-                        coolingType = new CoolingTypeModel();
-                        coolingType.CoolingType = Convert.ToInt32(xmlNode.SelectSingleNode("CoolingType").InnerText);
-                        coolingType.LowerLimit = Convert.ToDouble(xmlNode.SelectSingleNode("LowerLimit").InnerText);
-                        coolingType.Upperlimit = Convert.ToDouble(xmlNode.SelectSingleNode("Upperlimit").InnerText);
+                    coolingType = new CoolingTypeModel();
+                    coolingType.CoolingType = Convert.ToInt32(xmlNode.SelectSingleNode("CoolingType").InnerText);
+                    coolingType.LowerLimit = Convert.ToDouble(xmlNode.SelectSingleNode("LowerLimit").InnerText);
+                    coolingType.Upperlimit = Convert.ToDouble(xmlNode.SelectSingleNode("Upperlimit").InnerText);
 
-                        coolingTypeList.Add(coolingType);
-                    }
+                    coolingTypeList.Add(coolingType);
                 }
+                
                 return coolingTypeList;
             }
             catch(Exception)
@@ -50,19 +48,17 @@ namespace TypewiseAlert
 
                 XmlNodeList nodeList = xmlDocument.DocumentElement.SelectNodes("/EmailAlertList/EmailAlert");
 
-                if (nodeList != null && nodeList.Count > 0)
+                foreach (XmlNode xmlNode in nodeList)
                 {
-                    foreach (XmlNode xmlNode in nodeList)
-                    {
-                        emailAlertData = new EmailAlertModel();
-                        emailAlertData.BreachType = Convert.ToInt32(xmlNode.SelectSingleNode("BreachType").InnerText);
-                        emailAlertData.BreachName = xmlNode.SelectSingleNode("BreachName").InnerText;
-                        emailAlertData.Recipient = xmlNode.SelectSingleNode("Recipient").InnerText;
-                        emailAlertData.EmailMessage = xmlNode.SelectSingleNode("EmailMessage").InnerText;
+                    emailAlertData = new EmailAlertModel();
+                    emailAlertData.BreachType = Convert.ToInt32(xmlNode.SelectSingleNode("BreachType").InnerText);
+                    emailAlertData.BreachName = xmlNode.SelectSingleNode("BreachName").InnerText;
+                    emailAlertData.Recipient = xmlNode.SelectSingleNode("Recipient").InnerText;
+                    emailAlertData.EmailMessage = xmlNode.SelectSingleNode("EmailMessage").InnerText;
 
-                        emailAlertDataList.Add(emailAlertData);
-                    }
+                    emailAlertDataList.Add(emailAlertData);
                 }
+                
                 return emailAlertDataList;
             }
             catch (Exception)
