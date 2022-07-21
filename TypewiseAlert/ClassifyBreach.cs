@@ -7,17 +7,13 @@ namespace TypewiseAlert
 {
     public class ClassifyBreach
     {
-        public static BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
-        {
-            List<CoolingTypeModel> coolingTypeList = new List<CoolingTypeModel>();
-            CoolingTypeModel cooling = new CoolingTypeModel();
+        List<CoolingTypeModel> coolingList = new List<CoolingTypeModel>();
             XmlData xmlData = new XmlData();
 
-            coolingTypeList = xmlData.GetCoolingTypeData();
+            coolingList = xmlData.GetCoolingTypeData();
 
-            cooling = coolingTypeList.Where(t => t.CoolingType == Convert.ToInt32(coolingType)).FirstOrDefault();
+            CoolingTypeModel cooling = coolingList.Where(t => t.CoolingType == Convert.ToInt32(coolingType)).FirstOrDefault();
 
             return InferBreach.inferBreach(temperatureInC, cooling.LowerLimit, cooling.Upperlimit);
-        }
     }
 }
