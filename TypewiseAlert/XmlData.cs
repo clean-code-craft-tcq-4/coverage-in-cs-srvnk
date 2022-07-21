@@ -32,7 +32,7 @@ namespace TypewiseAlert
                 }
                 return coolingTypeList;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return null;
             }
@@ -65,7 +65,7 @@ namespace TypewiseAlert
                 }
                 return emailAlertDataList;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
