@@ -6,6 +6,7 @@ namespace TypewiseAlert.Test
 {
     public class TypewiseAlertTest
     {
+        [Fact]
         public void TypewiseTest()
         {
             TypewiseAlert.BatteryCharacter batteryCharacter;
