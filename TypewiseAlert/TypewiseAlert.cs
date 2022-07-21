@@ -20,7 +20,7 @@ namespace TypewiseAlert
                 {
                     return SendController.sendToController(breachType);
                 }
-                else if(alertTarget == AlertTarget.TO_EMAIL)
+                else
                 {
                     return SendController.sendToEmail(breachType);
                 }
