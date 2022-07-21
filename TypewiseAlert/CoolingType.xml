@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CoolingTypeList>
+  <CoolingType>
+    <Cooling>0</Cooling>
+    <LowerLimit>0</LowerLimit>
+    <UpperLimit>35</UpperLimit>
+  </CoolingType>
+  <CoolingType>
+    <Cooling>1</Cooling>
+    <LowerLimit>0</LowerLimit>
+    <UpperLimit>40</UpperLimit>
+  </CoolingType>
+  <CoolingType>
+    <Cooling>2</Cooling>
+    <LowerLimit>0</LowerLimit>
+    <UpperLimit>45</UpperLimit>
+  </CoolingType>
+</CoolingTypeList>
