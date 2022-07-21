@@ -22,7 +22,7 @@ namespace TypewiseAlert
                 }
                 else
                 {
-                    return SendController.sendToEmail(breachType);
+                    return SendEmail.sendToEmail(breachType);
                 }
             }
             catch(Exception)
