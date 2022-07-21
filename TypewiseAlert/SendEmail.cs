@@ -12,11 +12,10 @@ namespace TypewiseAlert
             try
             {
                 List<EmailAlertModel> emailAlertList = new List<EmailAlertModel>();
-                EmailAlertModel emailAlertData = new EmailAlertModel();
                 XmlData xmlData = new XmlData();
                 emailAlertList = xmlData.GetEmailAlertData();
 
-                emailAlertData = emailAlertList.Where(t => t.BreachType == Convert.ToInt32(breachType)).FirstOrDefault();
+                EmailAlertModel emailAlertData = emailAlertList.Where(t => t.BreachType == Convert.ToInt32(breachType)).FirstOrDefault();
 
                 Console.WriteLine("To: {}\n", emailAlertData.Recipient);
                 Console.WriteLine(emailAlertData.EmailMessage);
