@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Xml;
 
 namespace TypewiseAlert
@@ -15,7 +14,7 @@ namespace TypewiseAlert
                 CoolingTypeModel coolingType = null;
 
                 XmlDocument xmlDocument = new XmlDocument();
-                xmlDocument.Load(string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["CoolingTypeFile"]));
+                xmlDocument.Load(string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory, "CoolingTypeFile.xml"));
 
                 XmlNodeList nodeList = xmlDocument.DocumentElement.SelectNodes("/CoolingTypeList/CoolingType");
 
@@ -47,7 +46,7 @@ namespace TypewiseAlert
                 EmailAlertModel emailAlertData = null;
 
                 XmlDocument xmlDocument = new XmlDocument();
-                xmlDocument.Load(string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["EmailAlertFile"]));
+                xmlDocument.Load(string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory, "EmailAlertFile.xml"));
 
                 XmlNodeList nodeList = xmlDocument.DocumentElement.SelectNodes("/EmailAlertList/EmailAlert");
 
