@@ -7,7 +7,7 @@ namespace TypewiseAlert
 {
     public class ClassifyBreach
     {
-        public BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
+        public static BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
         {
             List<CoolingTypeModel> coolingList = new List<CoolingTypeModel>();
             XmlData xmlData = new XmlData();
