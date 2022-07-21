@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<EmailAlertList>
+  <EmailAlert>
+    <BreachType>0</BreachType>
+    <BreachName>TOO LOW</BreachName>
+	<Recipient>a.b@c.com</Recipient>
+    <EmailMessage>Hi, the temperature is too low</EmailMessage>
+  </EmailAlert>
+  <EmailAlert>
+    <BreachType>1</BreachType>
+    <BreachName>NORMAL</BreachName>
+	<Recipient>a.b@c.com</Recipient>
+    <EmailMessage>Hi, the temperature is normal</EmailMessage>
+  </EmailAlert>
+  <EmailAlert>
+    <BreachType>2</BreachType>
+    <BreachName>TOO HIGH</BreachName>
+	<Recipient>a.b@c.com</Recipient>
+    <EmailMessage>Hi, the temperature is too high</EmailMessage>
+  </EmailAlert>
+</EmailAlertList>
