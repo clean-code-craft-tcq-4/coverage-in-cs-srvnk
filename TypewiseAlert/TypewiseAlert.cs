@@ -22,8 +22,6 @@ namespace TypewiseAlert
                         return SendController.sendToController(breachType);
                     case AlertTarget.TO_EMAIL:
                         return SendEmail.sendToEmail(breachType);
-                    default:
-                        return false;
                 }
             }
             catch(Exception)
