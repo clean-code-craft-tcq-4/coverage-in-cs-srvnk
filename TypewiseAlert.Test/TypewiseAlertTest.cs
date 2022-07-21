@@ -18,7 +18,7 @@ namespace TypewiseAlert.Test
             Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, 36));
             
             Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, -1));
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, 30)).equals(false);
+            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, 30));
             Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, 36));
 
             batteryCharacter.coolingType = CoolingType.MED_ACTIVE_COOLING;
