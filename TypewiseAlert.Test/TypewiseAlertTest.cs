@@ -9,17 +9,17 @@ namespace TypewiseAlert.Test
         [Fact]
         public void TypewiseTest()
         {
-            TypewiseAlert.BatteryCharacter batteryCharacter;
-            batteryCharacter.coolingType = CoolingType.PASSIVE_COOLING;
-            batteryCharacter.brand = "BatteryBrand";
+            Assert.True(InferBreach.inferBreach(12, 20, 30) == BreachType.TOO_LOW);
+            Assert.True(InferBreach.inferBreach(0, 20, 30) == BreachType.TOO_LOW);
+            Assert.True(InferBreach.inferBreach(6, 20, 30) == BreachType.TOO_LOW);
 
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, -1).equals(true));
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, 30).equals(true));
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_CONTROLLER, batteryCharacter, 36).equals(true));
-            
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, -1).equals(true));
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, 30).equals(true));
-            Assert.True(TypewiseAlert.checkAndAlert(AlertTarget.TO_EMAIL, batteryCharacter, 36).equals(true));
+            Assert.True(InferBreach.inferBreach(25, 20, 30) == BreachType.NORMAL);
+            Assert.True(InferBreach.inferBreach(28, 20, 30) == BreachType.NORMAL);
+            Assert.True(InferBreach.inferBreach(22, 20, 30) == BreachType.NORMAL);
+
+            Assert.True(InferBreach.inferBreach(40, 20, 30) == BreachType.TOO_HIGH);
+            Assert.True(InferBreach.inferBreach(50, 20, 30) == BreachType.TOO_HIGH);
+            Assert.True(InferBreach.inferBreach(100, 20, 30) == BreachType.TOO_HIGH);
         }
     }
 }
